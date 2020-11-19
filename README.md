@@ -1,1 +1,1 @@
-# rwth-optimerung-b-task-1
+# RWTH Optimierung B Programmieraufgabe 1 W2020
