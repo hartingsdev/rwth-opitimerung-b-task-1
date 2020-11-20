@@ -1,0 +1,9 @@
+*
+*/
+!.gitignore
+!myShortestPath.cpp
+!myShortestPath.h
+!mySpanningTree.cpp
+!mySpanningTree.h
+!mySteinerTree.cpp
+!mySteinerTree.h
