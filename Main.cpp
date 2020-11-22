@@ -14,12 +14,12 @@ int main() {
   std::cout << "Which algorithm would you like to test "
                "(MST,ShortestPath,SteinerTree)?"
             << std::endl;
-  std::string algorithm;
-  std::cin >> algorithm;
+  std::string algorithm = "SteinerTree";
+//  std::cin >> algorithm;
   std::cout << "Which instance would you like to solve (1,2,3,4,5,6)?"
             << std::endl;
-  std::string graphNumber;
-  std::cin >> graphNumber;
+  std::string graphNumber = "2";
+//  std::cin >> graphNumber;
 
   Graph g{readGraphFromFile("Graph" + graphNumber + ".lgf")};
 
