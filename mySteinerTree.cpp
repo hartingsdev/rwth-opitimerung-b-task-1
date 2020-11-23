@@ -33,7 +33,7 @@ std::vector<Edge> my_steiner_tree(const Graph &g,
 
     /*
      * Danach wird der bestehende Graph kopiert und die nicht benötigten Vertices entfernet, damit auf den neuen Graph
-     * der MST Algorithmus angewendet werden kann. Nur die Vertices in der vorher berechneten Liste bleiben dem Graph
+     * der MST Algorithmus angewendet werden kann. Nur die Kanten der vorher berechneten Knoten bleiben dem Graph
      * erhalten.
      */
     Graph new_graph;
@@ -47,7 +47,8 @@ std::vector<Edge> my_steiner_tree(const Graph &g,
         ++next;
         auto completed_vertices_iterator = std::find(unionPath.begin(), unionPath.end(), *v_i);
         if (completed_vertices_iterator == unionPath.end()) {
-            remove_vertex(*v_i, new_graph);
+            clear_vertex(*v_i, new_graph);
+            //remove_vertex(*v_i, new_graph);
         }
     }
 
@@ -85,5 +86,5 @@ std::vector<Edge> my_steiner_tree(const Graph &g,
  *  -> dieser wird aber nicht betrachtet, da die Kante {V3,V4} nicht im kürzesten Pfad von V1 liegt.
  *
  * D)
- * O(|Terminals| -1 * (|V|*|E| + |V|) + V + O(MST)
+ * O(|Terminals| -1 * (|V|*|E| + |V|) + V + |V|-1 * V)
  */
